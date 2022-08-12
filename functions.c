@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 
 /************************* PRINT CHAR *************************/
 
@@ -72,13 +72,12 @@ int print_string(va_list types, char buffer[],
 		}
 	}
 
-													return (write(1, str, length));
+	return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
  * print_percent - Prints a percent sign
- * @
- * types: Lista of arguments
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width.
@@ -116,7 +115,7 @@ int print_int(va_list types, char buffer[],
 	int is_negative = 0;
 	long int n = va_arg(types, long int);
 	unsigned long int num;
-	
+
 	n = convert_size_number(n, size);
 
 	if (n == 0)
@@ -180,9 +179,9 @@ int print_binary(va_list types, char buffer[],
 		if (sum || i == 31)
 		{
 			char z = '0' + a[i];
-			
+
 			write(1, &z, 1);
-																count++;
+			count++;
 		}
 	}
 	return (count);

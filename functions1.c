@@ -49,6 +49,7 @@ int print_unsigned(va_list types, char buffer[],
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
+
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
@@ -70,7 +71,7 @@ int print_octal(va_list types, char buffer[],
 
 	if (flags & F_HASH && init_num != 0)
 		buffer[i--] = '0';
-	
+
 	i++;
 
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
